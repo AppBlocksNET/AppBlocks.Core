@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
-using Xamarin.Forms;
+using Windows.UI.Xaml.Controls;
 
-namespace AppBlocks.Core.Pages.Content
+namespace AppBlocks.Core.Pages
 {
     [DesignTimeVisible(false)]
-    public partial class Content : ContentPage
+    public partial class Content : Page
     {
         //public User User = User.CurrentUser();
         public string Source { get; set; }

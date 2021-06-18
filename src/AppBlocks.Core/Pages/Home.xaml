@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="AppBlocks.Core.Pages._Home"
+    x:Class="AppBlocks.Core.Pages.Home"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:UnoTestApp.Converters"

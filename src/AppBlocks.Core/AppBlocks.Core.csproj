@@ -8,7 +8,7 @@
     <TargetFrameworks>netstandard2.0;uap10.0.18362;xamarinios10;xamarinmac20;MonoAndroid11.0;monoandroid10.0</TargetFrameworks>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
-    <Version>0.0.1</Version>
+    <Version>0.0.13</Version>
     <Authors>David Walker, Radical Dave</Authors>
     <Company>AppBlocks, David Walker, Radical Dave</Company>
     <Copyright>AppBlocks, David Walker, Radical Dave</Copyright>
@@ -16,10 +16,11 @@
     <PackageProjectUrl>https://appblocks.net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/appblocksnet/AppBlocks.Core</RepositoryUrl>
     <Description>The BASE of ALL THE THINGS - Core</Description>
+    <PackageReleaseNotes>removed xamarin forms references</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AppBlocks.Models" Version="0.0.11" />
-    <PackageReference Include="Uno.UI" Version="3.7.4" />
+    <PackageReference Include="AppBlocks.Models" Version="0.0.12" />
+    <PackageReference Include="Uno.UI" Version="3.8.6" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />

@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="AppBlocks.Core.Pages.Index"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppBlocks.Core"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:datatype="using:AppBlocks.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ios="http://nventive.com/ios"
+    mc:Ignorable="d">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <!--<AppBarButton Content="Home" Tag="Home" Icon="Home" Click="OnAppBarButtonTapped" />-->
+                <AppBarButton Content="Blocks" Tag="Blocks" Icon="ViewAll" Label="Blocks" Click="OnAppBarButtonTapped" />
+                <AppBarButton Content="Browse" Tag="Browse" Icon="Folder" Label="Browse" Click="OnAppBarButtonTapped" />
+                <AppBarButton Content="Info" Tag="Info" Icon="Important" Label="Info" Click="OnAppBarButtonTapped" />
+                <AppBarButton Content="About" Tag="About" Icon="Help" Label="About" Click="OnAppBarButtonTapped" />
+                <AppBarButton x:Name="LoginButton" Content="Login" Label="Login" Tag="Login" Icon="Accept" Click="OnAppBarButtonTapped" />
+                <AppBarButton x:Name="ProfileButton" Content="Profile" Label="Profile" Tag="Profile" Icon="Setting" Click="OnAppBarButtonTapped" />
+                <AppBarButton x:Name="LogoutButton" Content="Logout" Label="Logout" Tag="Logout" Icon="Admin" Click="OnAppBarButtonTapped" />
+            </CommandBar.PrimaryCommands>
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal">
+                    <AppBarButton x:Name="BackButton" Content="Back" Tag="Home" Icon="Back" Click="OnAppBarButtonTapped" />
+                    <AppBarButton x:Name="HomeButton" Content="Home" Tag="Home" Icon="Home" Click="OnAppBarButtonTapped" />
+                    <TextBlock x:Name="CommandBarTitle" Tag="Home" Text="UnoTestApp" Margin="5" Foreground="Teal" FontSize="22" FontWeight="ExtraBold" VerticalAlignment="Top" Tapped="OnAppBarButtonTapped" />
+                </StackPanel>
+            </CommandBar.Content>
+        </CommandBar>
+        <Frame x:Name="contentFrame" />
+    </StackPanel>
+</Page>

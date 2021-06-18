@@ -1,15 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage  xmlns:views="clr-namespace:AppBlocks.Core.Pages.Content"
-                 xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="AppBlocks.Core.Pages.Content"
-             Title="{Binding Title}">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="ContentLabel" Text="{Binding Source}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+﻿<Page
+    x:Class="AppBlocks.Core.Pages.Content"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppBlocks.Core.Pages"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:datatype="using:AppBlocks.Core.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ios="http://nventive.com/ios"
+    mc:Ignorable="d">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="ContentTextBlock" Text="{Binding Source}" Margin="20" FontSize="30"/>
+    </StackPanel>
+</Page>
