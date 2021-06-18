@@ -1,7 +1,6 @@
-﻿using System;
+﻿using AppBlocks.Models;
+using System;
 using System.Collections.Generic;
-using AppBlocks.Core.Data;
-using AppBlocks.Core.DataGrid;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -12,7 +11,7 @@ namespace AppBlocks.Core.Pages.Admin
     /// </summary>
     public sealed partial class Index : Page
     {
-        private ReflectionDataSource dataSource = new ReflectionDataSource();
+        //private ReflectionDataSource dataSource = new ReflectionDataSource();
 
         public Index()
         {
@@ -23,15 +22,15 @@ namespace AppBlocks.Core.Pages.Admin
 
         private async void Page_Loading(object sender, object args)
         {
-            MainListView.ItemsSource = await dataSource.GetDataAsync<DataGridDataItem>(new Dictionary<string, string> { { "source", typeof(Index).Namespace } });
+            //MainListView.ItemsSource = await dataSource.GetDataAsync<Item>(new Dictionary<string, string> { { "source", typeof(Index).Namespace } });
         }
 
         private void MainListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (e.ClickedItem == null) return;
-            var item = (DataGridDataItem)e.ClickedItem;
+            var item = (Item)e.ClickedItem;
 
-            var itemType = Type.GetType($"{item.Namespace}.Index");
+            var itemType = Type.GetType($"{item.Id}.Index");
             if (itemType == null) return;
 
             Frame.Navigate(itemType);

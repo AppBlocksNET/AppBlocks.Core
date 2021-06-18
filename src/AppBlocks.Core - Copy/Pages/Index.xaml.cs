@@ -28,12 +28,10 @@ namespace AppBlocks.Core.Pages
                 LogoutButton.Opacity = 1;
             }
 
-			BackButton.Visibility = Visibility.Collapsed;
+			//BackButton.Visibility = Visibility.Collapsed;
 
             //Loading += Page_Loading;
-
-            //currentPage = typeof(_Home);
-
+            currentPage = typeof(Home);
 			if (currentPage != null) contentFrame.Navigate(currentPage);
 
 			if (AppBlocks.Models.App.Group != null) CommandBarTitle.Text = GetAppTitle();
@@ -50,48 +48,48 @@ namespace AppBlocks.Core.Pages
 			{
 				var tag = element.Tag.ToString();
 				Type page = null;
-				//switch (tag)
-				//{
+				switch (tag)
+				{
 					//case "Blocks":
 					//	page = typeof(Blocks);
 					//	break;
 					//case "Browse":
 					//	page = typeof(Browse);
 					//	break;
-					//case "Home":
-					//	if (currentPage != typeof(Home))
-					//	{
-					//		page = typeof(Home);
-     //                   }
-     //                   else
-     //                   {
-					//		App.Navigate(typeof(Index), true);
-     //                   }
-					//	break;
-					//case "Info":
-					//	page = typeof(Info);
-					//	break;
-					//case "About":
-					//	page = typeof(Admin.Env.Index);
-					//	break;
-					//case "Login":
-					//	page = typeof(Account.Login);
-					//	break;
-					//case "Logout":
-					//	App.CurrentUser = null;
-					//	page = typeof(Account.Login);
-					//	break;
-					//case "Profile":
-					//	page = typeof(Account.Profile);
-					//	break;
-				//}
+					case "Home":
+						if (currentPage != typeof(Home))
+						{
+							page = typeof(Home);
+                        }
+                        else
+                        {
+							//App.Navigate(typeof(Index), true);
+                        }
+						break;
+					case "Info":
+						//page = typeof(Info);
+						break;
+					case "About":
+						page = typeof(Admin.Env.Index);
+						break;
+					case "Login":
+						page = typeof(Account.Login);
+						break;
+					case "Logout":
+						App.CurrentUser = null;
+						page = typeof(Account.Login);
+						break;
+					case "Profile":
+						page = typeof(Account.Profile);
+						break;
+				}
 
 				if (page == null) return;
 
 				if (currentPage != page)
 				{
 					currentPage = page;
-					contentFrame.Navigate(page);
+					//contentFrame.Navigate(page);
 				}
 
 				var title = tag;

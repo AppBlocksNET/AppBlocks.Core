@@ -1,15 +1,17 @@
-﻿using AppBlocks.Core.Data;
-using AppBlocks.Core.DataGrid;
+﻿using AppBlocks.Models;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace AppBlocks.Core.Pages.Admin.AppSettings
+namespace AppBlocks.Core.Pages.Admin.Env
 {
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
 	public sealed partial class Index : Page
-	{public Index()
+	{
+		//private EnvDataSource dataSource = new EnvDataSource();
+
+		public Index()
 		{
 			InitializeComponent();
 
@@ -18,7 +20,7 @@ namespace AppBlocks.Core.Pages.Admin.AppSettings
 
 		private async void Page_Loading(object sender, object args)
 		{
-			//MainDataGrid.ItemsSource = await dataSource.GetDataAsync<DataGridDataItem>(null);
+			//MainDataGrid.ItemsSource = await dataSource.GetDataAsync<Item>(null);
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)

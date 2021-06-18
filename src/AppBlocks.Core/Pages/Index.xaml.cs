@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBlocks.Models;
+using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -27,10 +28,10 @@ namespace AppBlocks.Core.Pages
                 LogoutButton.Opacity = 1;
             }
 
-			BackButton.Visibility = Visibility.Collapsed;
+			//BackButton.Visibility = Visibility.Collapsed;
 
             //Loading += Page_Loading;
-            currentPage = typeof(_Home);
+            currentPage = typeof(Home);
 			if (currentPage != null) contentFrame.Navigate(currentPage);
 
 			if (AppBlocks.Models.App.Group != null) CommandBarTitle.Text = GetAppTitle();
@@ -49,12 +50,12 @@ namespace AppBlocks.Core.Pages
 				Type page = null;
 				switch (tag)
 				{
-					case "Blocks":
-						page = typeof(Blocks);
-						break;
-					case "Browse":
-						page = typeof(Browse);
-						break;
+					//case "Blocks":
+					//	page = typeof(Blocks);
+					//	break;
+					//case "Browse":
+					//	page = typeof(Browse);
+					//	break;
 					case "Home":
 						if (currentPage != typeof(Home))
 						{
@@ -62,24 +63,24 @@ namespace AppBlocks.Core.Pages
                         }
                         else
                         {
-							App.Navigate(typeof(Index), true);
+							//App.Navigate(typeof(Index), true);
                         }
 						break;
 					case "Info":
-						page = typeof(Info);
+						//page = typeof(Info);
 						break;
 					case "About":
-						page = typeof(Admin.Env.Index);
+						//page = typeof(Admin.Env.Index);
 						break;
 					case "Login":
-						page = typeof(Account.Login);
+						//page = typeof(Account.Login);
 						break;
 					case "Logout":
 						App.CurrentUser = null;
-						page = typeof(Account.Login);
+						//page = typeof(Account.Login);
 						break;
 					case "Profile":
-						page = typeof(Account.Profile);
+						//page = typeof(Account.Profile);
 						break;
 				}
 
@@ -88,7 +89,7 @@ namespace AppBlocks.Core.Pages
 				if (currentPage != page)
 				{
 					currentPage = page;
-					contentFrame.Navigate(page);
+					//contentFrame.Navigate(page);
 				}
 
 				var title = tag;

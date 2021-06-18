@@ -10,33 +10,25 @@ namespace AppBlocks.Core.Pages.Account
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class Profile : Page
+	public sealed partial class Login : Page
 	{
-		public Profile()
+		public Login()
 		{
 			InitializeComponent();
 
-            //Loading += Page_Loading;
-            //currentPage = typeof(_Home);
-            if (App.CurrentUser == null)
-            {
-                App.Navigate(typeof(Login));
-                return;
-            }
-            EmailTextBox.Text = App.CurrentUser.Name;
-            //App.CurrentUser.
+			//Loading += Page_Loading;
+			//currentPage = typeof(_Home);
+			//if (currentPage != null) contentFrame.Navigate(currentPage);
 		}
 
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (Frame.CanGoBack) Frame.GoBack();
-			Frame.Navigate(typeof(_Home));
+			Frame.Navigate(typeof(Home));
 		}
 
 		private void SaveButton_Click(object sender, RoutedEventArgs e)
 		{
-            return;
-
 			if (string.IsNullOrEmpty($"{EmailTextBox.Text}{PasswordPasswordBox.Password}")) return;
 
             var results = Authenticate(EmailTextBox.Text, PasswordPasswordBox.Password);
@@ -46,7 +38,7 @@ namespace AppBlocks.Core.Pages.Account
                 //Frame.Navigate(typeof(_Home));
                 //var rootFrame = _window.Content as Frame;
                 //rootFrame.Navigate(typeof(Shared.Pages.Index), e.Arguments);
-                App.Navigate(typeof(Shared.Pages.Index), true);
+                //App.Navigate(typeof(Shared.Pages.Index), true);
             }
             else
             {

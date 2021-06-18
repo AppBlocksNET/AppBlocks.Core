@@ -1,25 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+<Project Sdk="MSBuild.Sdk.Extras/3.0.23">
   <!--
 	Adding project references to this project requires some manual adjustments.
 	Please see https://github.com/unoplatform/uno/issues/3909 for more details.
 	-->
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;uap10.0.18362;xamarinios10;xamarinmac20;MonoAndroid11.0;monoandroid10.0</TargetFrameworks>
+    <TargetFrameworks>uap10.0.18362;netstandard2.0;xamarinios10;xamarinmac20;MonoAndroid11.0;monoandroid10.0</TargetFrameworks>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
-    <Version>0.0.13</Version>
     <Authors>David Walker, Radical Dave</Authors>
-    <Company>AppBlocks, David Walker, Radical Dave</Company>
-    <Copyright>AppBlocks, David Walker, Radical Dave</Copyright>
-    <RepositoryType>git</RepositoryType>
+    <Version>0.0.0</Version>
+    <Copyright>AppBlocks, David Walker, Radical Dave&lt;</Copyright>
+    <Description>The BASE of ALL THE THINGS - Core</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://appblocks.net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/appblocksnet/AppBlocks.Core</RepositoryUrl>
-    <Description>The BASE of ALL THE THINGS - Core</Description>
-    <PackageReleaseNotes>removed xamarin forms references</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>appblocks core unoplatform</PackageTags>
+    <PackageReleaseNotes>init</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AppBlocks.Models" Version="0.0.12" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="7.0.2" />
     <PackageReference Include="Uno.UI" Version="3.8.6" />
   </ItemGroup>
   <ItemGroup>
@@ -32,20 +34,9 @@
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Info.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Info.xaml" />
-    <UpToDateCheckInput Remove="Pages\Content.xaml" />
-    <UpToDateCheckInput Remove="Pages\Home.xaml" />
-    <UpToDateCheckInput Remove="Pages\List.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Pages\List.xaml.cs">
-      <DependentUpon>List.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
-    </Compile>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
