@@ -25,7 +25,7 @@ jobs:
         PROJECT_FILE_PATH: src/${{github.workflow}}/${{github.workflow}}.csproj
         PACKAGE_NAME: ${{github.workflow}}
         # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
-        VERSION_FILE_PATH: D:\a\${{github.workflow}}\${{github.workflow}}\src\${{github.workflow}}\bin\Release\${{github.workflow}}.Core.0.0.1.nupkg
+        VERSION_FILE_PATH: D:\a\${{github.workflow}}\${{github.workflow}}\src\${{github.workflow}}\bin\Release\${{github.workflow}}.0.0.1.nupkg
         # Regex pattern to extract version info in a capturing group
         #VERSION_REGEX: # optional, default is ^\s*<Version>(.*)<\/Version>\s*$
         # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
