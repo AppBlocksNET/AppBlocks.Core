@@ -28,7 +28,7 @@ jobs:
     - name: Publish NuGet
       uses: rohith/publish-nuget@v2.5.5
       with:
-        PROJECT_FILE_PATH: src/AppBlocks.Core/AppBlocks.Core.csproj
+        #PROJECT_FILE_PATH: src/AppBlocks.Core/AppBlocks.Core.csproj
         PACKAGE_NAME: AppBlocks.Core
         # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
         #VERSION_FILE_PATH: src/${{github.workflow}}/bin/Release/${{github.workflow}}.0.0.1.nupkg
