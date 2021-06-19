@@ -24,6 +24,6 @@ jobs:
       with:
         name: ${{github.workflow}}-nupkg
         path: |
-          src/${{github.workflow}}/bin/Release/${{github.workflow}}.*.nupkg
+          src/${{github.workflow}}/bin/Release/${{github.workflow}}.*.nupkg -s https://api.nuget.org/v3/index.json
     - name: Push
       run: dotnet nuget push src/${{github.workflow}}/bin/Release/${{github.workflow}}.*.nupkg --api-key ${{secrets.NUGET_KEY}}
