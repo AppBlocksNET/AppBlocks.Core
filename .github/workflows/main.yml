@@ -20,11 +20,11 @@ jobs:
     - name: Build with MSBuild
       run: msbuild ${{github.workflow}}.sln -p:Configuration=Release
     - name: Publish nupkg
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{github.workflow}}-nupkg
-          path: |
-            bin/Release/${{github.workflow}}.*.nupkg
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{github.workflow}}-nupkg
+        path: |
+          bin/Release/${{github.workflow}}.*.nupkg
     - name: Publish NuGet
       uses: rohith/publish-nuget@v2.5.5
       with:
