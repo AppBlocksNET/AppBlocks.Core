@@ -23,15 +23,15 @@ namespace AppBlocks.Core.Pages
 
 		private async void Page_Loading(object sender, object args)
 		{
-			if (App.Group == null) App.Group = await new Item().FromServiceAsync<Item>(null);
+			if (Context.Group == null) Context.Group = await Item.FromServiceAsync<Item>(null);
 
-			if (App.Group == null)
+			if (Context.Group == null)
 			{
 				//MainListView.ItemsSource = await dataSource.GetDataAsync<Item>(new Dictionary<string, string> { { "source", typeof(Index).Namespace } });
 			}
 			else
             {
-				MainListView.ItemsSource = App.Group.Children;
+				MainListView.ItemsSource = Context.Group.Children;
             }
 
 		}

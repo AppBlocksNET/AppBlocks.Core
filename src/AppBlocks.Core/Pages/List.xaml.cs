@@ -23,7 +23,7 @@ namespace AppBlocks.Core.Pages
         private async void Page_Loading(object sender, object args)
         {
             //MainListView.ItemsSource = await dataSource.GetDataAsync<DataGridDataItem>(new Dictionary<string, string> { { "source", typeof(Index).Namespace } });
-            var source = await new Item().FromServiceAsync<Item>(null);
+            var source = await Item.FromServiceAsync<Item>(null);
             MainListView.ItemsSource = source?.Children;
         }
 

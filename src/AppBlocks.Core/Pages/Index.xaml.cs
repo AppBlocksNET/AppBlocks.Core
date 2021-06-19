@@ -15,7 +15,7 @@ namespace AppBlocks.Core.Pages
 		{
 			InitializeComponent();
 
-            if (App.CurrentUser == null)
+            if (Context.CurrentUser == null)
             {
                 LoginButton.Opacity = 1;
                 ProfileButton.Opacity = 0;
@@ -34,12 +34,12 @@ namespace AppBlocks.Core.Pages
             currentPage = typeof(Home);
 			if (currentPage != null) contentFrame.Navigate(currentPage);
 
-			if (AppBlocks.Models.App.Group != null) CommandBarTitle.Text = GetAppTitle();
+			if (Context.Group != null) CommandBarTitle.Text = GetAppTitle();
 		}
 
         private string GetAppTitle()
         {
-			return !string.IsNullOrEmpty(App.Group?.Title) ? App.Group?.Title : "UnoTestApp";
+			return !string.IsNullOrEmpty(Context.Group?.Title) ? Context.Group?.Title : "UnoTestApp";
 		}
 		
         private void OnAppBarButtonTapped(object sender, RoutedEventArgs args)
@@ -76,7 +76,7 @@ namespace AppBlocks.Core.Pages
 						//page = typeof(Account.Login);
 						break;
 					case "Logout":
-						App.CurrentUser = null;
+						Context.CurrentUser = null;
 						//page = typeof(Account.Login);
 						break;
 					case "Profile":

@@ -3,13 +3,14 @@
   <!--
 	Adding project references to this project requires some manual adjustments.
 	Please see https://github.com/unoplatform/uno/issues/3909 for more details.
+	;MonoAndroid11.0;monoandroid10.0
 	-->
   <PropertyGroup>
-    <TargetFrameworks>uap10.0.18362;netstandard2.0;xamarinios10;xamarinmac20;MonoAndroid11.0;monoandroid10.0</TargetFrameworks>
+    <TargetFrameworks>uap10.0.18362;netstandard2.0;xamarinios10;xamarinmac20</TargetFrameworks>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
     <Authors>David Walker, Radical Dave</Authors>
-    <Version>0.0.0</Version>
+    <Version>0.0.1</Version>
     <Copyright>AppBlocks, David Walker, Radical Dave&lt;</Copyright>
     <Description>The BASE of ALL THE THINGS - Core</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -17,10 +18,11 @@
     <RepositoryUrl>https://github.com/appblocksnet/AppBlocks.Core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>appblocks core unoplatform</PackageTags>
-    <PackageReleaseNotes>init</PackageReleaseNotes>
+    <PackageReleaseNotes>models updated to 14. Settings merged into Context</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AppBlocks.Models" Version="0.0.12" />
+    <PackageReference Include="AppBlocks.Models" Version="0.0.14" />
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="7.0.2" />
     <PackageReference Include="Uno.UI" Version="3.8.6" />
   </ItemGroup>
